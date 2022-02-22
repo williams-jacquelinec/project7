@@ -42,7 +42,7 @@ TODO:
 * Show an example of your autoencoder accurately reconstrcuting a sinle input value
 
 
-## Transcription Factor Classifier
+## Step 3: Generate your Transcription Factor Classifier
 ### Background
 Transcription factors are proteins that bind DNA at promoters to drive gene expression. 
 Most preferentially bind specific patterns of sequence, while ignoring others. 
