@@ -19,7 +19,7 @@ classifier for transcription factor binding sites.
 
 ## Step 1: Finish the neural network API
 TODO:
-* Finish all incomplete methods that have a pass statement in the NN class in the nn.py file
+* Finish all incomplete methods that have a pass statement in the NeuralNetwork class in the nn.py file
 * Finish the 'one_hot_encode_seqs' function in the preprocess.py file
 * Finish the 'sample_seqs' function in the preprocess.py file
 
@@ -34,7 +34,7 @@ input via 'decoding' layer(s). Autoencoders are most often used as a dimensional
 Here you will train train an 64x16x64 autoencoder. All of the following work should be done in a jupyter notebook.
 
 TODO:
-* Generate an instance of your NN class for the 64x16x64 autoencoder
+* Generate an instance of your NeuralNetwork class for the 64x16x64 autoencoder
 * Read in toy dataset 'digits' from sklearn using digits = sklearn.deatasets.load_digits()
 * Split the digits dataset into a train and a validation set
 * Train your autoencoder on the train split of your digits dataset
@@ -52,7 +52,7 @@ sites in the genome are all independent. However, there are cases where people h
 positional interdependencies exist.
 
 ### Your task
-Here you will implement a multilayer fully connected neural network using your NN class
+Here you will implement a multilayer fully connected neural network using your NeuralNetwork class
 capable of accurately predicting whether a short DNA sequence is a binding site for the 
 yeast transcription factor Rap1. Note that the training data is incredibly imbalanced as
 there are much fewer positive sequences than negative sequences. In order to overcome this
@@ -76,7 +76,7 @@ TODO:
 # Grading (50 points total)
 
 ## Implementation of API (15 points)
-* Proper implementation of NN class (13 points)
+* Proper implementation of NeuralNetwork class (13 points)
 * Proper implementation of 'one_hot_encode_seqs' function (1 point)
 * Proper implementation of 'sample_seqs' function (1 point)
 
