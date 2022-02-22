@@ -10,7 +10,7 @@ from numpy.typing import ArrayLike
 # Defining preprocessing functions
 def one_hot_encode_seqs(seq_arr: List[str]) -> ArrayLike:
     """
-    This function one hot encodes an array of nucleic acid sequences for use as input into
+    This function one hot encodes a list of nucleic acid sequences for use as input into
     a fully connected neural net.
 
     Args:
