@@ -28,8 +28,6 @@ class NeuralNetwork:
             Max number of epochs for training.
         loss_function: str
             Name of loss function.
-        lambda_reg: float
-            L2 regularization parameter.
 
     Attributes:
         arch: list of dicts
@@ -41,8 +39,7 @@ class NeuralNetwork:
                  seed: int,
                  batch_size: int,
                  epochs: int,
-                 loss_function: str,
-                 lambda_reg: float):
+                 loss_function: str):
         # Saving architecture
         self.arch = nn_arch
         # Saving hyperparameters
@@ -51,7 +48,6 @@ class NeuralNetwork:
         self._epochs = epochs
         self._loss_func = loss_function
         self._batch_size = batch_size
-        self._lambda_reg = lambda_reg
         # Initializing the parameter dictionary for use in training
         self._param_dict = self._init_params()
         self._model_trained = False
@@ -292,7 +288,7 @@ class NeuralNetwork:
         """
         pass
 
-    def _binary_crossentropy(self, y: ArrayLike, y_hat: ArrayLike) -> float:
+    def _binary_cross_entropy(self, y: ArrayLike, y_hat: ArrayLike) -> float:
         """
         Binary cross entropy loss function.
 
@@ -308,7 +304,7 @@ class NeuralNetwork:
         """
         pass
 
-    def _binary_crossentropy_backprop(self, y: ArrayLike, y_hat: ArrayLike) -> ArrayLike:
+    def _binary_cross_entropy_backprop(self, y: ArrayLike, y_hat: ArrayLike) -> ArrayLike:
         """
         Binary cross entropy loss function derivative.
 
