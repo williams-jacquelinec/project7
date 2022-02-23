@@ -50,7 +50,6 @@ class NeuralNetwork:
         self._batch_size = batch_size
         # Initializing the parameter dictionary for use in training
         self._param_dict = self._init_params()
-        self._model_trained = False
 
     def _init_params(self) -> Dict[str, ArrayLike]:
         """
