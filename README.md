@@ -56,7 +56,7 @@ Here you will implement a multilayer fully connected neural network using your N
 capable of accurately predicting whether a short DNA sequence is a binding site for the 
 yeast transcription factor Rap1. Note that the training data is incredibly imbalanced as
 there are much fewer positive sequences than negative sequences. In order to overcome this
-you will need to implement a sampling scheme to ensure that class imbalance does not effect
+you will need to implement a sampling scheme to ensure that class imbalance does not affect
 your training.
 
 TODO:
@@ -64,7 +64,7 @@ TODO:
 * Use the 'read_fasta_file' function to read in all the negative examples from all 1kb upstream in yeast.
 * Implement a sampling scheme in the 'sample_seq' function in the preprocess.py file
 * Explain in your jupyter notebook why chose the sampling scheme that you did.
-* Generate a training a validation set for training your classifier.
+* Generate a training and a validation set for training your classifier.
 * One hot encode your training and validation sets using your implementation of the 'one_hot_encode_seqs' function in the preprocess.py file
 * Train your neural network!
 * Explain your choice of loss function in the jupyter notebook

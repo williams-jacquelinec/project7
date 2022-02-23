@@ -21,7 +21,7 @@ class NeuralNetwork:
         lr: float
             Learning Rate (alpha).
         seed: int
-            Random seed for assuring reproducibility.
+            Random seed to ensure reproducibility.
         batch_size: int
             Size of mini-batches used for training.
         epochs: int
@@ -78,22 +78,6 @@ class NeuralNetwork:
             param_dict['b' + str(layer_idx)] = np.random.randn(output_dim, 1) * 0.1
         return param_dict
 
-    def forward(self, X: ArrayLike) -> Tuple[ArrayLike, Dict[str, ArrayLike]]:
-        """
-        This method is responsible for one forward pass of the entire neural network.
-
-        Args:
-            X: ArrayLike
-                Input matrix with shape [batch_size, features].
-
-        Returns:
-            output: ArrayLike
-                Output of forward pass.
-            cache: Dict[str, ArrayLike]:
-                Memory store of Z and A matrices for use in backprop.
-        """
-        pass
-
     def _single_forward(self,
                         W_curr: ArrayLike,
                         b_curr: ArrayLike,
@@ -120,22 +104,19 @@ class NeuralNetwork:
         """
         pass
 
-    def backprop(self, y: ArrayLike, y_hat: ArrayLike, cache: Dict[str, ArrayLike]):
+    def forward(self, X: ArrayLike) -> Tuple[ArrayLike, Dict[str, ArrayLike]]:
         """
-        This method is responsible for the backprop of the whole fully connected neural network.
+        This method is responsible for one forward pass of the entire neural network.
 
         Args:
-            y (array-like):
-                Ground truth labels.
-            y_hat: ArrayLike
-                Predicted output values.
-            cache: Dict[str, ArrayLike]
-                Dictionary containing the information about the
-                most recent forward pass, specifically A and Z matrices.
+            X: ArrayLike
+                Input matrix with shape [batch_size, features].
 
         Returns:
-            grad_dict: Dict[str, ArrayLike]
-                Dictionary containing the gradient information from this pass of backprop.
+            output: ArrayLike
+                Output of forward pass.
+            cache: Dict[str, ArrayLike]:
+                Dictionary storing Z and A matrices from `_single_forward` for use in backprop.
         """
         pass
 
@@ -170,6 +151,25 @@ class NeuralNetwork:
                 Partial derivative of loss function with respect to current layer weight matrix.
             db_curr: ArrayLike
                 Partial derivative of loss function with respect to current layer bias matrix.
+        """
+        pass
+
+    def backprop(self, y: ArrayLike, y_hat: ArrayLike, cache: Dict[str, ArrayLike]):
+        """
+        This method is responsible for the backprop of the whole fully connected neural network.
+
+        Args:
+            y (array-like):
+                Ground truth labels.
+            y_hat: ArrayLike
+                Predicted output values.
+            cache: Dict[str, ArrayLike]
+                Dictionary containing the information about the
+                most recent forward pass, specifically A and Z matrices.
+
+        Returns:
+            grad_dict: Dict[str, ArrayLike]
+                Dictionary containing the gradient information from this pass of backprop.
         """
         pass
 
@@ -354,7 +354,7 @@ class NeuralNetwork:
     def _loss_function(self, y: ArrayLike, y_hat: ArrayLike) -> float:
         """
         Loss function, computes loss given y_hat and y. This function is
-        here for the case that someone where to want to write more loss
+        here for the case where someone would want to write more loss
         functions than just binary cross entropy.
 
         Args:
