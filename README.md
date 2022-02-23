@@ -31,7 +31,7 @@ into a lower-dimensional latent space via 'encoding' layer(s) and then attempts 
 input via 'decoding' layer(s). Autoencoders are most often used as a dimensionality reduction technique.
 
 ### Your task
-Here you will train train an 64x16x64 autoencoder. All of the following work should be done in a jupyter notebook.
+Here you will train a 64x16x64 autoencoder. All of the following work should be done in a jupyter notebook.
 
 TODO:
 * Generate an instance of your NeuralNetwork class for the 64x16x64 autoencoder
@@ -40,7 +40,7 @@ TODO:
 * Train your autoencoder on the train split of your digits dataset
 * Plot your training and validation loss per epoch
 * Explain in your jupyter notebook why you chose the hyperparameter values that you did
-* Show an example of your autoencoder accurately reconstrcuting a sinle input value
+* Show an example of your autoencoder accurately reconstructing a single input value
 
 
 ## Step 3: Generate your Transcription Factor Classifier
@@ -84,7 +84,7 @@ TODO:
 * Read in dataset and generate train and validation splits (2 points)
 * Successfully train your autoencoder (4 points)
 * Plots of training and validation loss (2 points)
-* Explanation of hyperparameters and exaple reconstruction (2)
+* Explanation of hyperparameters and example reconstruction (2)
 
 ## Transcription Factor Classifier (15 points)
 * Correctly read in all data (2 points)
