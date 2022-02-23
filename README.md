@@ -35,7 +35,7 @@ Here you will train a 64x16x64 autoencoder. All of the following work should be 
 
 TODO:
 * Generate an instance of your NeuralNetwork class for the 64x16x64 autoencoder
-* Read in toy dataset 'digits' from sklearn using digits = sklearn.deatasets.load_digits()
+* Read in toy dataset 'digits' from sklearn using digits = sklearn.datasets.load_digits()
 * Split the digits dataset into a train and a validation set
 * Train your autoencoder on the train split of your digits dataset
 * Plot your training and validation loss per epoch
