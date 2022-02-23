@@ -40,7 +40,7 @@ TODO:
 * Train your autoencoder on the train split of your digits dataset
 * Plot your training and validation loss per epoch
 * Explain in your jupyter notebook why you chose the hyperparameter values that you did
-* Show an example of your autoencoder accurately reconstructing a single input value
+* Quantify your average reconstruction error over the dataset.
 
 
 ## Step 3: Generate your Transcription Factor Classifier
@@ -84,7 +84,8 @@ TODO:
 * Read in dataset and generate train and validation splits (2 points)
 * Successfully train your autoencoder (4 points)
 * Plots of training and validation loss (2 points)
-* Explanation of hyperparameters and example reconstruction (2)
+* Explanation of hyperparameters (1 point)
+* Quantification of reconstruction error (1 point)
 
 ## Transcription Factor Classifier (15 points)
 * Correctly read in all data (2 points)
@@ -93,7 +94,7 @@ TODO:
 * Successfully train your classifeir (4 points)
 * Explain the choice of your loss function in the jupyter notebook (2 points)
 * Plots of training and validation loss (2 points)
-* Print out accuracy of the classifier on the training set (1 point)
+* Print out accuracy of the classifier on the testing set (1 point)
 
 ## Testing (7 points)
 Proper unit tests for:
