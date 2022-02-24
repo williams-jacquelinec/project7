@@ -3,7 +3,7 @@
 
 # Importing Dependencies
 import numpy as np
-from typing import List, Dict, Tuple
+from typing import List, Dict, Tuple, Union
 from numpy.typing import ArrayLike
 
 
@@ -15,7 +15,7 @@ class NeuralNetwork:
     Parameters:
         nn_arch: List[Dict[str, float]]
             This list of dictionaries describes the fully connected layers of the artificial neural network.
-            e.g. [{'input_dim': 64, 'output_dim': 32}, {'input_dim': 32, 'output_dim': 8}] will generate a
+            e.g. [{'input_dim': 64, 'output_dim': 32, 'activation': 'relu'}, {'input_dim': 32, 'output_dim': 8, 'activation:': 'sigmoid'}] will generate a
             2 layer deep fully connected network with an input dimension of 64, a 32 dimension hidden layer
             and an 8 dimensional output.
         lr: float
@@ -34,7 +34,7 @@ class NeuralNetwork:
             This list of dictionaries describing the fully connected layers of the artificial neural network.
     """
     def __init__(self,
-                 nn_arch: List[Dict[str, int]],
+                 nn_arch: List[Dict[str, Union(int, str)]],
                  lr: float,
                  seed: int,
                  batch_size: int,
