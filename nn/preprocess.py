@@ -3,7 +3,7 @@
 
 # Importing Dependencies
 import numpy as np
-from typing import List
+from typing import List, Tuple
 from numpy.typing import ArrayLike
 
 
