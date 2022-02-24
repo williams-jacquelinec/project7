@@ -32,17 +32,23 @@ def one_hot_encode_seqs(seq_arr: List[str]) -> ArrayLike:
     pass
 
 
-def sample_seqs(seqs: List[str]) -> List[seq]:
+def sample_seqs(
+        seqs: List[str]
+        labels: List[bool]) -> Tuple[List[seq], List[bool]]:
     """
-    This function should sample your negative sequences to account
-    for class imbalance.
-
+    This function should sample your sequences to account for class imbalance. 
+    Consider this as a sampling scheme with replacement.
+    
     Args:
         seqs: List[str]
-            List of all negative sequences.
+            List of all sequences.
+        labels: List[bool]
+            List of positive/negative labels
 
     Returns:
         sampled_seqs: List[str]
-            List of sampled negative sequences.
+            List of sampled sequences which reflect a balanced class size
+        sampled_labels: List[bool]
+            List of labels for the sampled sequences
     """
     pass
