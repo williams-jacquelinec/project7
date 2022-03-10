@@ -2,7 +2,7 @@
 Fully Connected Neural Network
 
 
-# Assigment
+# Assignment
 
 ## Overview
 In this assignment, you will try out your machine learning skills by first implementing a neural network
