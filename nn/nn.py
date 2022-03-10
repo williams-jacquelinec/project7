@@ -144,10 +144,9 @@ class NeuralNetwork:
         A_prev = X
 
         for _index, _layer in enumerate(self.arch):
-
             W_curr = self._param_dict['W' + str(_index + 1)]
             b_curr = self._param_dict['b' + str(_index + 1)]
-            activation = _layer["activation"]
+            activation = _layer['activation']
 
             Z_curr, A_curr = self._single_forward(W_curr, b_curr, A_prev, activation)
 
@@ -632,80 +631,3 @@ class NeuralNetwork:
 
         self._param_dict = pytest_parameters
         
-
-
-# testing_dict = [{'input_dim': 8, 'output_dim': 4, 'activation': 'relu'}, {'input_dim': 4, 'output_dim': 2, 'activation': 'sigmoid'}]
-# nn_test = NeuralNetwork(testing_dict, lr = 0.5, seed = 10, batch_size = 2, epochs = 3, loss_function = 'bce')
-
-# # setting up my testing parameters
-# pytest_parameters = {}
-
-# pytest_parameters['W1'] = np.array([[1,2,3,4],
-#                                     [5,6,7,8],
-#                                     [4,3,2,1],
-#                                     [8,7,6,5]])
-# pytest_parameters['b1'] = np.array([[0.5],[1.5],[2.5],[3.5]])
-
-# pytest_parameters['W2'] = np.array([[1],[2],[3],[4]])
-# pytest_parameters['b2'] = np.array([[1],[2],[3],[4]])
-
-# nn_test.pytest_params(pytest_parameters)
-
-# A_prev_test = np.array([[4,3,2,1]])
-
-# output, cache = nn_test.forward(A_prev_test)
-# print('                ')
-# print(' ------------------ FINAL OUTPUT ----------------- ')
-# print('here is the output')
-# print(output)
-# print('here is the cache')
-# print(cache)
-
-
-# print(' ------------------ TESTING ----------------- ')
-# test_array = np.array([[4,3,2,1], [5,6,7,8]])
-
-# print(test_array[:, :])
-
-# W_curr = np.array([[1,2,3,4], [5,6,7,8]])
-# b_curr = np.array([[0.5,1]])
-# Z_curr = np.array([[2,6], [4,8]])
-# dA_curr = np.array([[7,5],[9,1]])
-# A_prev = np.array([[1,2,3,4], [5,6,7,8]])
-
-# dA_prev, dW_curr, db_curr = nn_test._single_backprop(W_curr = W_curr, b_curr = b_curr, Z_curr = Z_curr, dA_curr = dA_curr, A_prev = A_prev, activation_curr = 'relu')
-
-# # dA_prev, dW_curr, db_curr
-# # print(dA_prev)
-# # print(dW_curr)
-# # print(db_curr[0][0])
-
-# from sklearn import metrics
-
-# bce_error = nn_test._binary_cross_entropy(np.array([0.01,0.99]), np.array([0.099,0.001]))
-# bce_error_backprop = nn_test._binary_cross_entropy_backprop(np.array([0.01,0.99]), np.array([0.099,0.001]))
-# # print(bce_error)
-# # print(bce_error_backprop)
-
-# # bce_error_2 = metrics.log_loss(np.array([0.01,0.99]), np.array([0.099,0.001]))
-# # print(bce_error_2)
-
-# mse_test = nn_test._mean_squared_error_backprop(np.array([2,3]), np.array([4,5]))
-# # print(mse_test)
-
-
-# mse_test_2 = metrics.mean_squared_error(np.array([2,3]), np.array([4,5]))
-# # print(mse_test_2)
-
-# X_train = np.array([[2,3,4,5]])
-# y_train = np.array([[4]])
-# X_val = np.array([[5,6,7,8]])
-# y_val = np.array([[6]])
-
-# per_epoch_loss_train, per_epoch_loss_val = nn_test.fit(X_train = X_train, y_train = y_train, X_val = X_val, y_val = y_val)
-
-# predict_test = nn_test.predict(X_train)
-# # print(predict_test)
-
-# sample_size = int(size/2)
-# print(sample_size)

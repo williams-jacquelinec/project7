@@ -1,3 +1,4 @@
+! [BuildStatus] (https://github.com/williams-jacquelinec/Project7/workflows/Project7/badge.svg?event=push)
 # Project 7
 Fully Connected Neural Network
 
