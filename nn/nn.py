@@ -291,11 +291,11 @@ class NeuralNetwork:
             b_prev = self._param_dict['b' + str(_index + 1)]
             dW = grad_dict['dW' + str(_index + 1)]
             db = grad_dict['db' + str(_index + 1)]
-            W_new = W_prev - self._lr * dW 
-            b_new = b_prev - self._lr * db 
+            W_curr = W_prev - self._lr * dW 
+            b_curr = b_prev - self._lr * db 
             
-            self._param_dict['W' + str(_index + 1)] = W_new
-            self._param_dict['b' + str(_index + 1)] = b_new
+            self._param_dict['W' + str(_index + 1)] = W_curr
+            self._param_dict['b' + str(_index + 1)] = b_curr
 
 
 
@@ -332,20 +332,19 @@ class NeuralNetwork:
         per_epoch_loss_train = []
         per_epoch_loss_val = []
 
-		# training the model
+	# training the model
         # self._epochs = # of trainings (1 training = 1 forward & backprop?)
         for i in range(self._epochs):
-
-			# for each round of training, concatenate and shuffle the data
+		# for each round of training, concatenate and shuffle the data
             shuffle_data = np.concatenate([X_train, y_train], axis=1)
             np.random.shuffle(shuffle_data)
 
-			# how many dimensions is y_train?
+		# how many dimensions is y_train?
             y_train_dims = y_train.shape[1]
             shuffle_data_dims = shuffle_data.shape[1]
             cutoff = shuffle_data_dims - y_train_dims
 
-			# determine batches
+		# determine batches
             X_train = shuffle_data[:, :cutoff]
             y_train = shuffle_data[:, cutoff:]
             num_batches = np.ceil(X_train.shape[0]/self._batch_size)
@@ -358,10 +357,10 @@ class NeuralNetwork:
             loss_history_train = []
             loss_history_val = []
 
-			# iterating through all batches
+		# iterating through all batches
             for X_train, y_train in batches:
 
-				# forward pass
+			# forward pass
                 output, cache = self.forward(X_train)
                 
                 if self._loss_func == "mse":
@@ -371,7 +370,7 @@ class NeuralNetwork:
                     
                 loss_history_train.append(loss_train)
 
-				# backward pass
+			# backward pass
                 grad_dict = self.backprop(y_train, output, cache)
                 
                 self._update_params(grad_dict)
@@ -385,7 +384,7 @@ class NeuralNetwork:
                     
                 loss_history_val.append(loss_val)
 
-			# average training & validation loss
+		# average training & validation loss
             per_epoch_loss_train.append(sum(loss_history_train)/len(loss_history_train))
             per_epoch_loss_val.append(sum(loss_history_val)/len(loss_history_val))
 
